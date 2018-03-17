@@ -4,7 +4,7 @@
 class FLOOR
 {
 public:
-	FLOOR(int rows, int columns);
+	FLOOR(int rows_, int columns_);
 	~FLOOR();
 	void clean_tile(int row, int column);
 	bool is_tile_dirty(int row, int column);
@@ -14,11 +14,9 @@ public:
 private:
 	unsigned int columns;
 	unsigned int rows;
-	bool * tiles;
+	bool **tiles;
 
 }
-
-
 
 
 #endif
