@@ -1,6 +1,6 @@
 #include "floor.h"
-
-FLOOR::FLOOR(int rows_, int columns_)			//inicializamos todas las baldosas como sucias
+#include "defines.h"
+FLOOR::FLOOR(int rows_, int columns_, const char * dirtyfile, const char * cleanfile)			//inicializamos todas las baldosas como sucias
 {
 	rows = rows_;
 	columns = columns_;
@@ -11,8 +11,14 @@ FLOOR::FLOOR(int rows_, int columns_)			//inicializamos todas las baldosas como 
 			tiles[i][j] = 1;
 		}
 	}
+	bitmap_dirty = al_load_bitmap(dirtyfile);
+	bitmap_clean = al_load_bitmap(cleanfile);
 }
-
+FLOOR::~FLOOR()
+{
+	al_destroy_bitmap(bitmap_dirty);
+	al_destroy_bitmap(bitmap_clean);
+}
 void FLOOR::clean_tile(int row, int column)
 {
 	tiles[row][column] = 0;			//el estado de la columna es ahora limpia

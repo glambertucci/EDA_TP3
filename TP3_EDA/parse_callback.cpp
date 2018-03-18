@@ -18,7 +18,7 @@ int input_check(char *key , char*value , void *data_in)
 		{
 			if (atof(value) < 70)
 			{
-				data->width = atof(value);
+				data->col = atof(value);
 			}
 			else
 			{
@@ -29,7 +29,7 @@ int input_check(char *key , char*value , void *data_in)
 		{
 			if (atof(value) < 100)
 			{
-				data->height = atof(value);
+				data->fil = atof(value);
 			}
 			else
 			{
