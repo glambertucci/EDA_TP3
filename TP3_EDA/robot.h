@@ -12,7 +12,8 @@ public:
 	POINT get_coordinates();
 	double get_direction();
 	void set_coordinates(POINT coordinates);
-	void set_direction(double direction);
+	void set_coordinates(float x, float y);		//hacen lo mismo pero lo hacemos para varios argumentos de entrada, mas comodo
+	void set_direction(double direction_);
 private:
 	POINT p;
 	double direction;
