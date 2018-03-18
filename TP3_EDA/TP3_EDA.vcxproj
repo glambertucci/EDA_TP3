@@ -41,6 +41,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="botfile.jpg" />
+    <Image Include="cleanfile.png" />
+    <Image Include="dirtyfile.png" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{EE7D1154-D4B8-40B9-9403-01B064AA43B9}</ProjectGuid>

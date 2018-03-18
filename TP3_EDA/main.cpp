@@ -20,8 +20,8 @@ int main(int argc, char **argv)
 {
 	userData * userinfo;
 	ALLEGRO_DISPLAY * display;
-	//pCallback pfun = input_check;
-	if (parseCmdLine(argc, argv,&input_check,(void *) userinfo))
+	pCallback pfun = input_check;
+	if (parseCmdLine(argc, argv,pfun,(void *) userinfo))
 	{
 		if(allegro_startup())
 		{

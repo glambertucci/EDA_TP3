@@ -69,4 +69,15 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="botfile.jpg">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="cleanfile.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="dirtyfile.png">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
