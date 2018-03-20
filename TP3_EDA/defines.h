@@ -1,9 +1,16 @@
 #define display_width 800.0
 #define display_height 600.0
 
-#define column_height
-#define column_width(columns) (display_width/columns)
+#define column_height(rows, height) (height/rows)
+#define column_width(columns, width) (width/columns)
+
+
 #define MAX_BOTS 30 //no se elijan ustedes
+
+#define DIRTY 1
+#define CLEAN 0
+
+
 typedef struct
 {
 	unsigned int fil=10;
@@ -13,6 +20,8 @@ typedef struct
 
 }userData;
 // si falta un parametro sera definido asi.
+
+
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_image.h>

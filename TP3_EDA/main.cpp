@@ -16,23 +16,26 @@
 #define CLEANFILE "cleanfile.png"
 #define BOTFILE "botfile.png"
 using namespace std;
-int main(int argc, char **argv)
+
+
+int
+main(int argc, char **argv)
 {
 	userData * userinfo;
-	ALLEGRO_DISPLAY * display;
+	DISPLAY display(DIRTYFILE, CLEANFILE, BOTFILE, );
 	pCallback pfun = input_check;
 	if (parseCmdLine(argc, argv,pfun,(void *) userinfo))
 	{
 		if(allegro_startup())
 		{
-			if ((display = al_create_display(display_width, display_height))!= NULL)
+			if (display.check_success())
 			{
 				srand(time(NULL));
 				//hacer main
 				int ticks;
 				if (userinfo->mode == 1)
 				{
-					simulation s(userinfo->fil,userinfo->col,DIRTYFILE,userinfo->bots_num,CLEANFILE,BOTFILE,display_width,display_height);
+					SIMULATION s(userinfo->fil,userinfo->col,userinfo->bots_num,display_width,display_height);
 						ticks = s.run();//falta definir las clases
 
 						
@@ -45,14 +48,13 @@ int main(int argc, char **argv)
 						double sum = 0.0;
 						for (int a = 0; i < 1000; ++i)
 						{
-							simulation s( userinfo->fil,userinfo->col, DIRTYFILE, i, CLEANFILE, BOTFILE, userinfo->col * 10, userinfo->fil * 10);
+							SIMULATION s( userinfo->fil,userinfo->col,  i,  userinfo->col * 10, userinfo->fil * 10);
 
 							sum += s.run;
 
 						}
 					}
 				}
-				al_destroy_display(display);
 				allegro_shut_down();
 
 			}
